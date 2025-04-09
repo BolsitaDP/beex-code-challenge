@@ -1,5 +1,19 @@
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
+import { PaperProvider } from "react-native-paper";
+import { I18nextProvider } from "react-i18next";
+import "../utils/localization/i18";
+import i18n from "../utils/localization/i18";
+import theme from "../utils/theme/theme";
+import { AuthProvider } from "../providers/authProvider";
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <I18nextProvider i18n={i18n}>
+      <PaperProvider theme={theme}>
+        <AuthProvider>
+          <Slot />
+        </AuthProvider>
+      </PaperProvider>
+    </I18nextProvider>
+  );
 }
