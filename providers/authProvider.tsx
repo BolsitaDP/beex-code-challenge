@@ -1,75 +1,66 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as SplashScreen from "expo-splash-screen";
-import { useRouter, useSegments } from "expo-router";
+import React, { createContext, useEffect, useState } from "react";
+import {
+  User,
+  getUser,
+  login as loginUser,
+  register as registerUser,
+  removeUser,
+} from "../services/authService";
 import { Alert } from "react-native";
-
-SplashScreen.preventAutoHideAsync();
-
-type User = any; // TODO: Define user type
+import { useTranslation } from "react-i18next";
 
 interface AuthContextType {
   user: User | null;
-  signIn: (userData: object) => Promise<void>;
-  signOut: () => Promise<void>;
-  isLoading: boolean;
+  loading: boolean;
+  login: (email: string, password: string) => Promise<void>;
+  register: (name: string, email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
 }
 
-export const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<object | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const segments = useSegments();
-  const router = useRouter();
-
-  const isInAuthGroup = segments[0] === "(auth)";
-  const isInAppGroup = segments[0] === "(app)";
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const { t } = useTranslation();
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    init();
+    loadUser();
   }, []);
 
-  const init = async () => {
+  const loadUser = async () => {
     try {
-      const userData = await AsyncStorage.getItem("user");
-
-      if (userData) {
-        setUser(JSON.parse(userData));
-      }
-
-      await new Promise((res) => setTimeout(res, 500));
+      const storedUser = await getUser();
+      setUser(storedUser);
     } catch (error) {
-      Alert.alert("Error", "Hubo un problema al cargar el usuario.");
+      Alert.alert(
+        t("alerts.error.title"),
+        error instanceof Error ? error.message : t("auth.loadingTheUser")
+      );
     } finally {
-      setIsLoading(false);
-      await SplashScreen.hideAsync();
+      setLoading(false);
     }
   };
 
-  useEffect(() => {
-    if (isLoading) return;
-
-    if (!user && isInAppGroup) {
-      router.replace("/(auth)/login");
-    } else if (user && isInAuthGroup) {
-      router.replace("/(app)/(tabs)");
-    }
-  }, [user, isLoading, segments]);
-
-  const signIn = async (userData: object) => {
-    await AsyncStorage.setItem("user", JSON.stringify(userData));
-    setUser(userData);
+  const login = async (email: string, password: string) => {
+    const loggedUser = await loginUser(email, password);
+    setUser(loggedUser);
   };
 
-  const signOut = async () => {
-    await AsyncStorage.removeItem("user");
+  const register = async (name: string, email: string, password: string) => {
+    const newUser = await registerUser(name, email, password);
+    setUser(newUser);
+  };
+
+  const logout = async () => {
+    await removeUser();
     setUser(null);
-    router.replace("/(auth)/login");
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut, isLoading }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

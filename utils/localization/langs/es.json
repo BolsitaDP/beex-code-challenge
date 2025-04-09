@@ -1,8 +1,55 @@
 {
+  "alerts": {
+    "error": {
+      "title": "Error",
+      "emailRequired": "El correo es obligatorio",
+      "invalidEmail": "Correo inválido",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "nameRequired": "El nombre es obligatorio",
+      "message": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
+    },
+    "success": {
+      "title": "Éxito",
+      "message": "La operación se realizó con éxito."
+    },
+    "warning": {
+      "title": "Advertencia",
+      "message": "Por favor, verifica los datos ingresados."
+    }
+  },
   "bottomNavigation": {
     "matches": "Inicio",
     "complexes": "Complejos",
     "matchmaking": "Matchmaking",
     "profile": "Perfil"
+  },
+  "auth": {
+    "insideAuthProvider": "useAuth debe usarse dentro de un AuthProvider",
+    "loadingTheUser": "Error al cargar usuario",
+    "savingTheUser": "Error al guardar usuario",
+    "loadingTheUserData": "Error al cargar los datos del usuario",
+    "deletingTheUser": "Error al eliminar el usuario",
+    "invalidCredentials": "Credenciales inválidas",
+    "emailAlreadyInUse": "El correo ya está en uso"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "registerHere": "¿No tienes cuenta? Regístrate aquí"
+  },
+  "register": {
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "userRegistered": "Usuario registrado con éxito",
+    "title": "Registrarse",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "registerButton": "Registrarse",
+    "loginHere": "¿Ya tienes cuenta? Inicia sesión aquí"
   }
 }
