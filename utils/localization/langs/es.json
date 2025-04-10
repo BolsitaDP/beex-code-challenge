@@ -70,5 +70,24 @@
     "title": "Partidos por nivel",
     "search": "Buscar partidos emparejados",
     "noMatches": "No hay partidos disponibles"
+  },
+  "profile": {
+    "levels": {
+      "beginner": "Novato",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "title": "Tu perfil",
+    "progress": "Progreso del perfil",
+    "name": "Nombre",
+    "city": "Ciudad",
+    "selectLevel": "Selecciona tu nivel",
+    "level": "Nivel de habilidad",
+    "saveError": "Error al guardar el perfil",
+    "save": "Guardar cambios",
+    "reset": "Restablecer ciudad y nivel",
+    "logout": "Cerrar sesión",
+    "logoutError": "Error al tratar de cerrar sesión",
+    "saved": "Perfil actualizado"
   }
 }

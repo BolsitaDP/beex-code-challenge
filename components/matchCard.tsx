@@ -36,7 +36,8 @@ const MatchCard = ({ match, onJoin }: Props) => {
       <Card.Title title={match.title} subtitle={match.city} />
       <Card.Content>
         <Text style={{ fontWeight: "bold" }}>
-          {t("matches.requiredLevel")}: <Text>{match.requiredLevel}</Text>
+          {t("matches.requiredLevel")}:{" "}
+          <Text>{t(`profile.levels.${match.requiredLevel}`)}</Text>
         </Text>
         <Text style={{ fontWeight: "bold" }}>
           {t("matches.players")}:{" "}

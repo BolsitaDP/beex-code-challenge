@@ -4,7 +4,7 @@ import {
   getUser,
   login as loginUser,
   register as registerUser,
-  removeUser,
+  logout as logoutUser,
 } from "../services/authService";
 import { Alert } from "react-native";
 import { useTranslation } from "react-i18next";
@@ -15,6 +15,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
@@ -55,12 +56,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const logout = async () => {
-    await removeUser();
+    await logoutUser(setUser);
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ user, loading, login, register, logout, setUser }}>
       {children}
     </AuthContext.Provider>
   );

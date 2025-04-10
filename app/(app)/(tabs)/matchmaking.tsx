@@ -7,6 +7,7 @@ import matchesData from "@/assets/data/matches.json";
 import { USER_KEY } from "@/services/authService";
 import CustomBG from "@/components/CustomBG";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/hooks/useAuth";
 
 export type match = {
   id: string;
@@ -23,6 +24,7 @@ const MatchmakingScreen = () => {
   const [matches, setMatches] = useState<match[]>([]);
   const [search, setSearch] = useState<string>("");
 
+  const { user } = useAuth();
   const { t } = useTranslation();
   const theme = useTheme();
 
@@ -32,9 +34,12 @@ const MatchmakingScreen = () => {
         const userInfo = await AsyncStorage.getItem(USER_KEY);
         const storedLevel = userInfo ? JSON.parse(userInfo).level : null;
 
-        const filteredMatches = matchesData.filter(
-          (match) =>
-            match.requiredLevel.toLowerCase() === storedLevel.toLowerCase()
+        console.log(userInfo);
+
+        const filteredMatches = matchesData.filter((match) =>
+          match.requiredLevel.toLowerCase() === storedLevel
+            ? storedLevel.toLowerCase()
+            : ""
         );
         setMatches(filteredMatches);
       } catch (error) {
@@ -43,7 +48,7 @@ const MatchmakingScreen = () => {
     };
 
     loadLevelAndMatches();
-  }, []);
+  }, [user]);
 
   const handleJoin = (title: string) => {
     Alert.alert(t("alerts.success.title"), t("matches.joinSuccess", { title }));

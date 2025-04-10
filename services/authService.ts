@@ -1,26 +1,41 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
+import i18n from "../utils/localization/i18";
+import { router } from "expo-router";
 
 export type User = {
   id: string;
   email: string;
   name: string;
   password: string;
-  // TODO: Add the optional information that displays in the profile
+  city?: string;
+  level?: "beginner" | "intermediate" | "advanced";
 };
-const { t } = useTranslation();
 
-const USERS_KEY = "users";
+export const USERS_KEY = "users";
 export const USER_KEY = "user";
 
 export const saveUser = async (userData: User): Promise<void> => {
   try {
     await AsyncStorage.setItem(USER_KEY, JSON.stringify(userData));
+
+    const usersData = await AsyncStorage.getItem(USERS_KEY);
+    const users: User[] = usersData ? JSON.parse(usersData) : [];
+
+    const updatedUsers = users.map((u) =>
+      u.id === userData.id ? userData : u
+    );
+
+    const userExists = users.some((u) => u.id === userData.id);
+    if (!userExists) {
+      updatedUsers.push(userData);
+    }
+
+    await AsyncStorage.setItem(USERS_KEY, JSON.stringify(updatedUsers));
   } catch (error) {
     Alert.alert(
-      t("alerts.error.title"),
-      error instanceof Error ? error.message : t("auth.savingTheUser")
+      i18n.t("alerts.error.title"),
+      error instanceof Error ? error.message : i18n.t("auth.savingTheUser")
     );
     throw error;
   }
@@ -32,8 +47,8 @@ export const getUser = async (): Promise<User | null> => {
     return userData ? JSON.parse(userData) : null;
   } catch (error) {
     Alert.alert(
-      t("alerts.error.title"),
-      error instanceof Error ? error.message : t("auth.loadingTheUserData")
+      i18n.t("alerts.error.title"),
+      error instanceof Error ? error.message : i18n.t("auth.loadingTheUserData")
     );
     throw error;
   }
@@ -44,8 +59,8 @@ export const removeUser = async (): Promise<void> => {
     await AsyncStorage.removeItem(USER_KEY);
   } catch (error) {
     Alert.alert(
-      t("alerts.error.title"),
-      error instanceof Error ? error.message : t("auth.deletingTheUser")
+      i18n.t("alerts.error.title"),
+      error instanceof Error ? error.message : i18n.t("auth.deletingTheUser")
     );
     throw error;
   }
@@ -63,7 +78,7 @@ export const login = async (email: string, password: string): Promise<User> => {
     await saveUser(foundUser);
     return foundUser;
   } else {
-    throw new Error(t("auth.invalidCredentials"));
+    throw new Error(i18n.t("auth.invalidCredentials"));
   }
 };
 
@@ -77,7 +92,7 @@ export const register = async (
 
   const exists = users.some((u) => u.email === email);
   if (exists) {
-    throw new Error(t("auth.emailAlreadyInUse"));
+    throw new Error(i18n.t("auth.emailAlreadyInUse"));
   }
 
   const newUser: User = {
@@ -92,4 +107,31 @@ export const register = async (
   await saveUser(newUser);
 
   return newUser;
+};
+
+export const logout = async (
+  setUser: (user: User | null) => void
+): Promise<void> => {
+  try {
+    const userData = await AsyncStorage.getItem(USER_KEY);
+    const usersData = await AsyncStorage.getItem("users");
+
+    if (userData && usersData) {
+      const user: User = JSON.parse(userData);
+      const users: User[] = JSON.parse(usersData);
+
+      const updatedUsers = users.map((u) => (u.id === user.id ? user : u));
+
+      await AsyncStorage.setItem("users", JSON.stringify(updatedUsers));
+    }
+    await AsyncStorage.removeItem(USER_KEY);
+    setUser(null);
+    router.replace("/(auth)/login");
+  } catch (error) {
+    Alert.alert(
+      i18n.t("alerts.error.title"),
+      error instanceof Error ? error.message : i18n.t("auth.deletingTheUser")
+    );
+    throw error;
+  }
 };
