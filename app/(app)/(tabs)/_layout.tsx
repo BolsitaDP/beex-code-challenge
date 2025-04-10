@@ -7,7 +7,7 @@ import {
   GroupIcon,
   SoccerBallIcon,
   UserIcon,
-} from "../../../components/icons";
+} from "@/components/icons";
 import { useTranslation } from "react-i18next";
 
 export default function Layout() {

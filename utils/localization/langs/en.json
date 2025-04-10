@@ -1,1 +1,113 @@
-{}
+{
+  "alerts": {
+    "error": {
+      "title": "Error",
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email",
+      "passwordRequired": "Password is required",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "passwordMismatch": "Passwords do not match",
+      "nameRequired": "Name is required",
+      "message": "An unexpected error occurred. Please try again later."
+    },
+    "success": {
+      "title": "Success",
+      "message": "The operation was successful."
+    },
+    "warning": {
+      "title": "Warning",
+      "message": "Please check the entered data."
+    },
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "bottomNavigation": {
+    "matches": "Home",
+    "complexes": "Complexes",
+    "matchmaking": "Matchmaking",
+    "profile": "Profile"
+  },
+  "auth": {
+    "insideAuthProvider": "useAuth must be used within an AuthProvider",
+    "loadingTheUser": "Error loading user",
+    "savingTheUser": "Error saving user",
+    "loadingTheUserData": "Error loading user data",
+    "deletingTheUser": "Error deleting user",
+    "invalidCredentials": "Invalid credentials",
+    "emailAlreadyInUse": "Email is already in use"
+  },
+  "login": {
+    "title": "Log in",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Log in",
+    "registerHere": "Don't have an account? Register here"
+  },
+  "register": {
+    "passwordMismatch": "Passwords do not match",
+    "userRegistered": "User successfully registered",
+    "title": "Register",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "registerButton": "Register",
+    "loginHere": "Already have an account? Log in here"
+  },
+  "matches": {
+    "title": "Matches",
+    "search": "Search matches",
+    "requiredLevel": "Required level",
+    "players": "Players",
+    "date": "Date",
+    "join": "Join",
+    "joinSuccess": "You've joined the match: {{title}}!"
+  },
+  "complexes": {
+    "title": "Sports complexes",
+    "search": "Search by name or city",
+    "noComplexes": "No complexes available"
+  },
+  "matchmaking": {
+    "title": "Matches by level",
+    "search": "Search matched games",
+    "noMatches": "No matches available"
+  },
+  "profile": {
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "validation": {
+      "nameTooShort": "Name must be at least 3 characters long.",
+      "nameInvalid": "Name can only contain letters and spaces."
+    },
+    "sections": {
+      "info": "General Information",
+      "preferences": "Preferences"
+    },
+    "title": "Your profile",
+    "progress": "Profile progress",
+    "name": "Name",
+    "city": "City",
+    "selectLevel": "Select your level",
+    "level": "Skill level",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": {
+      "black": "Black",
+      "green": "Green",
+      "pink": "Pink",
+      "yellow": "Yellow",
+      "blue": "Blue"
+    },
+    "selectLanguage": "Select language",
+    "themeSelection": "Select theme",
+    "saveError": "Error saving profile",
+    "save": "Save changes",
+    "logout": "Log out",
+    "logoutError": "Error trying to log out",
+    "saved": "Profile updated"
+  }
+}

@@ -53,7 +53,10 @@ const MatchCard = ({ match, onJoin }: Props) => {
       <Card.Actions>
         <Button
           textColor={theme.colors.background}
-          style={{ backgroundColor: theme.colors.primary }}
+          style={{
+            backgroundColor: theme.colors.primary,
+            borderColor: theme.colors.primary,
+          }}
           onPress={() => onJoin(match.title)}>
           {t("matches.join")}
         </Button>

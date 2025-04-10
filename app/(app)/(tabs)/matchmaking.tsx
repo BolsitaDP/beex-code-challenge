@@ -34,8 +34,6 @@ const MatchmakingScreen = () => {
         const userInfo = await AsyncStorage.getItem(USER_KEY);
         const storedLevel = userInfo ? JSON.parse(userInfo).level : null;
 
-        console.log(userInfo);
-
         const filteredMatches = matchesData.filter((match) =>
           match.requiredLevel.toLowerCase() === storedLevel
             ? storedLevel.toLowerCase()

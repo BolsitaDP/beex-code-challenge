@@ -17,7 +17,9 @@
     "warning": {
       "title": "Advertencia",
       "message": "Por favor, verifica los datos ingresados."
-    }
+    },
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
   },
   "bottomNavigation": {
     "matches": "Inicio",
@@ -77,15 +79,33 @@
       "intermediate": "Intermedio",
       "advanced": "Avanzado"
     },
+    "validation": {
+      "nameTooShort": "El nombre debe tener al menos 3 caracteres.",
+      "nameInvalid": "El nombre solo puede contener letras y espacios."
+    },
+    "sections": {
+      "info": "Información General",
+      "preferences": "Preferencias"
+    },
     "title": "Tu perfil",
     "progress": "Progreso del perfil",
     "name": "Nombre",
     "city": "Ciudad",
     "selectLevel": "Selecciona tu nivel",
     "level": "Nivel de habilidad",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themes": {
+      "black": "Negro",
+      "green": "Verde",
+      "pink": "Rosa",
+      "yellow": "Amarillo",
+      "blue": "Azul"
+    },
+    "selectLanguage": "Selecciona el lenguaje",
+    "themeSelection": "Selecciona el tema",
     "saveError": "Error al guardar el perfil",
     "save": "Guardar cambios",
-    "reset": "Restablecer ciudad y nivel",
     "logout": "Cerrar sesión",
     "logoutError": "Error al tratar de cerrar sesión",
     "saved": "Perfil actualizado"
