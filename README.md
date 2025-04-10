@@ -15,7 +15,7 @@ Esta es una aplicación móvil desarrollada con **React Native** y **Expo** que 
 
    ```bash
    git clone https://github.com/BolsitaDP/beex-code-challenge
-   cd tu-repo
+   cd beex-code-challenge
 
    ```
 
