@@ -5,6 +5,7 @@ import "../utils/localization/i18";
 import i18n from "../utils/localization/i18";
 import theme from "../utils/theme/theme";
 import { AuthProvider } from "../providers/authProvider";
+import { StatusBar } from "react-native";
 
 export default function RootLayout() {
   return (

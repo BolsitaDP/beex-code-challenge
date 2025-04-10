@@ -12,7 +12,7 @@ export type User = {
 const { t } = useTranslation();
 
 const USERS_KEY = "users";
-const USER_KEY = "user";
+export const USER_KEY = "user";
 
 export const saveUser = async (userData: User): Promise<void> => {
   try {

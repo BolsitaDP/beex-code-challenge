@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, StatusBar } from "react-native";
 import React from "react";
 import { IconButton, useTheme } from "react-native-paper";
 
@@ -24,6 +24,10 @@ const CustomBG = ({
 
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar
+        backgroundColor={theme.colors.primary}
+        barStyle="light-content"
+      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"

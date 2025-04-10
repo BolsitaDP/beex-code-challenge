@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
-import { Searchbar, IconButton, Card, useTheme } from "react-native-paper";
+import {
+  Searchbar,
+  IconButton,
+  Card,
+  useTheme,
+  Text,
+} from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import sportsComplexesData from "../../../assets/data/sportsComplexes.json";
 import { useTranslation } from "react-i18next";
@@ -65,15 +71,12 @@ const Complexes = () => {
         iconColor={theme.colors.primary}
         value={searchQuery}
         onChangeText={setSearchQuery}
-        style={[
-          styles.search,
-          {
-            backgroundColor: theme.colors.background,
-            borderColor: theme.colors.primary,
-            borderWidth: 1,
-            marginBottom: 20,
-          },
-        ]}
+        style={{
+          backgroundColor: theme.colors.background,
+          borderColor: theme.colors.primary,
+          borderWidth: 1,
+          marginBottom: 20,
+        }}
       />
 
       <FlatList
@@ -87,17 +90,22 @@ const Complexes = () => {
           />
         )}
         contentContainerStyle={{ paddingBottom: 20 }}
+        ListEmptyComponent={
+          <Text style={styles.empty}>{t("complexes.noComplexes")}</Text>
+        }
       />
     </CustomBG>
   );
 };
 
 const styles = StyleSheet.create({
-  search: {
-    marginBottom: 10,
-  },
   card: {
     marginBottom: 10,
+  },
+  empty: {
+    textAlign: "center",
+    marginTop: 50,
+    fontSize: 16,
   },
 });
 

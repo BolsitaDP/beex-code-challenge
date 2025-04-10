@@ -22,7 +22,7 @@
   "bottomNavigation": {
     "matches": "Inicio",
     "complexes": "Complejos",
-    "matchmaking": "Matchmaking",
+    "matchmaking": "Emparejados",
     "profile": "Perfil"
   },
   "auth": {
@@ -53,8 +53,8 @@
     "loginHere": "¿Ya tienes cuenta? Inicia sesión aquí"
   },
   "matches": {
-    "title": "Búsqueda de partidos",
-    "search": "Buscar partidos...",
+    "title": "Partidos",
+    "search": "Buscar partidos",
     "requiredLevel": "Nivel requerido",
     "players": "Jugadores",
     "date": "Fecha",
@@ -63,6 +63,12 @@
   },
   "complexes": {
     "title": "Complejos deportivos",
-    "search": "Buscar por nombre o ciudad"
+    "search": "Buscar por nombre o ciudad",
+    "noComplexes": "No hay complejos disponibles"
+  },
+  "matchmaking": {
+    "title": "Partidos por nivel",
+    "search": "Buscar partidos emparejados",
+    "noMatches": "No hay partidos disponibles"
   }
 }

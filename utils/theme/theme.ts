@@ -5,12 +5,12 @@ const theme = {
   colors: {
     ...MD3LightTheme.colors,
     primary: "#2B2B2B", // Gris oscuro
-    background: "#E4E4E4", // Gris claro
+    background: "#E4E4E4", // Gris muy claro
     green: "#277927", // Verde
     red: "#b53b3b", // Rojo
     text: "#121212", // Negro
-    secondary: "#a1a1a1",
-    tertiary: "#777777",
+    secondary: "#A1A1A1", // Gris intermedio
+    tertiary: "#777777", // Gris claro
   },
   roundness: 10,
 };
