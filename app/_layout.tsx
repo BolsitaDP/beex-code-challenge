@@ -1,18 +1,16 @@
 import { Slot } from "expo-router";
-import { I18nextProvider } from "react-i18next";
-import "../utils/localization/i18";
-import i18n from "../utils/localization/i18";
 import { AuthProvider } from "../providers/authProvider";
 import { ThemeProvider } from "@/providers/themeProvider";
+import { I18nProvider } from "@/providers/i18nProvider";
 
 export default function RootLayout() {
   return (
-    <I18nextProvider i18n={i18n}>
+    <I18nProvider>
       <ThemeProvider>
         <AuthProvider>
           <Slot />
         </AuthProvider>
       </ThemeProvider>
-    </I18nextProvider>
+    </I18nProvider>
   );
 }
