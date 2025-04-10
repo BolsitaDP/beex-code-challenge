@@ -16,7 +16,6 @@ const CustomBG = ({
   title,
   children,
   height = 80,
-  keyboardOpen,
   titleOnBig,
   backButtonActive = false,
   backButton,
@@ -26,6 +25,7 @@ const CustomBG = ({
   return (
     <View style={{ flex: 1 }}>
       <ScrollView
+        showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
         style={[styles.background, { backgroundColor: theme.colors.primary }]}
         contentContainerStyle={{
@@ -57,7 +57,7 @@ const CustomBG = ({
                 styles.title,
                 {
                   fontSize: titleOnBig ? 50 : 24,
-                  marginTop: keyboardOpen ? 40 : titleOnBig ? 60 : 30,
+                  marginTop: titleOnBig ? 60 : height / 10,
                   color: theme.colors.background,
                 },
               ]}>
@@ -71,7 +71,7 @@ const CustomBG = ({
           style={[
             styles.container,
             {
-              paddingTop: keyboardOpen ? 110 : 0,
+              paddingTop: 40,
               backgroundColor: theme.colors.background,
               flex: 1,
             },

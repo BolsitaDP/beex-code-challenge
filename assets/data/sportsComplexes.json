@@ -1,0 +1,37 @@
+[
+  {
+    "id": "c1",
+    "name": "Complejo Deportivo El Campín",
+    "city": "Bogotá",
+    "distanceKm": 2.3,
+    "isFavorite": false
+  },
+  {
+    "id": "c2",
+    "name": "Centro Deportivo Medellín Norte",
+    "city": "Medellín",
+    "distanceKm": 4.7,
+    "isFavorite": true
+  },
+  {
+    "id": "c3",
+    "name": "Cancha Sintética La 14",
+    "city": "Cali",
+    "distanceKm": 1.9,
+    "isFavorite": false
+  },
+  {
+    "id": "c4",
+    "name": "Complejo Panamericano",
+    "city": "Cali",
+    "distanceKm": 5.5,
+    "isFavorite": false
+  },
+  {
+    "id": "c5",
+    "name": "Polideportivo Envigado",
+    "city": "Envigado",
+    "distanceKm": 3.2,
+    "isFavorite": true
+  }
+]

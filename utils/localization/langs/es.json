@@ -51,5 +51,14 @@
     "confirmPassword": "Confirmar contraseña",
     "registerButton": "Registrarse",
     "loginHere": "¿Ya tienes cuenta? Inicia sesión aquí"
+  },
+  "matches": {
+    "title": "Búsqueda de partidos",
+    "search": "Buscar partidos...",
+    "requiredLevel": "Nivel requerido",
+    "players": "Jugadores",
+    "date": "Fecha",
+    "join": "Unirse",
+    "joinSuccess": "¡Te has unido al partido: {{title}}!"
   }
 }

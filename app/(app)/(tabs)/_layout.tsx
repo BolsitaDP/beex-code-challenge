@@ -22,6 +22,7 @@ export default function Layout() {
           <Tabs
             screenOptions={{
               headerShown: false,
+              animation: "fade",
               tabBarStyle: {
                 height: 60,
                 backgroundColor: theme.colors.primary,
