@@ -1,0 +1,113 @@
+{
+  "alerts": {
+    "error": {
+      "title": "Error",
+      "emailRequired": "El correo es obligatorio",
+      "invalidEmail": "Correo inválido",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "nameRequired": "El nombre es obligatorio",
+      "message": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
+    },
+    "success": {
+      "title": "Éxito",
+      "message": "La operación se realizó con éxito."
+    },
+    "warning": {
+      "title": "Advertencia",
+      "message": "Por favor, verifica los datos ingresados."
+    },
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "bottomNavigation": {
+    "matches": "Inicio",
+    "complexes": "Complejos",
+    "matchmaking": "Emparejados",
+    "profile": "Perfil"
+  },
+  "auth": {
+    "insideAuthProvider": "useAuth debe usarse dentro de un AuthProvider",
+    "loadingTheUser": "Error al cargar usuario",
+    "savingTheUser": "Error al guardar usuario",
+    "loadingTheUserData": "Error al cargar los datos del usuario",
+    "deletingTheUser": "Error al eliminar el usuario",
+    "invalidCredentials": "Credenciales inválidas",
+    "emailAlreadyInUse": "El correo ya está en uso"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "registerHere": "¿No tienes cuenta? Regístrate aquí"
+  },
+  "register": {
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "userRegistered": "Usuario registrado con éxito",
+    "title": "Registrarse",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "registerButton": "Registrarse",
+    "loginHere": "¿Ya tienes cuenta? Inicia sesión aquí"
+  },
+  "matches": {
+    "title": "Partidos",
+    "search": "Buscar partidos",
+    "requiredLevel": "Nivel requerido",
+    "players": "Jugadores",
+    "date": "Fecha",
+    "join": "Unirse",
+    "joinSuccess": "¡Te has unido al partido: {{title}}!"
+  },
+  "complexes": {
+    "title": "Complejos deportivos",
+    "search": "Buscar por nombre o ciudad",
+    "noComplexes": "No hay complejos disponibles"
+  },
+  "matchmaking": {
+    "title": "Partidos por nivel",
+    "search": "Buscar partidos emparejados",
+    "noMatches": "No hay partidos disponibles"
+  },
+  "profile": {
+    "levels": {
+      "beginner": "Novato",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "validation": {
+      "nameTooShort": "El nombre debe tener al menos 3 caracteres.",
+      "nameInvalid": "El nombre solo puede contener letras y espacios."
+    },
+    "sections": {
+      "info": "Información General",
+      "preferences": "Preferencias"
+    },
+    "title": "Tu perfil",
+    "progress": "Progreso del perfil",
+    "name": "Nombre",
+    "city": "Ciudad",
+    "selectLevel": "Selecciona tu nivel",
+    "level": "Nivel de habilidad",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themes": {
+      "black": "Negro",
+      "green": "Verde",
+      "pink": "Rosa",
+      "yellow": "Amarillo",
+      "blue": "Azul"
+    },
+    "selectLanguage": "Selecciona el lenguaje",
+    "themeSelection": "Selecciona el tema",
+    "saveError": "Error al guardar el perfil",
+    "save": "Guardar cambios",
+    "logout": "Cerrar sesión",
+    "logoutError": "Error al tratar de cerrar sesión",
+    "saved": "Perfil actualizado"
+  }
+}

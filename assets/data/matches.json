@@ -1,0 +1,52 @@
+[
+  {
+    "id": "m1",
+    "title": "Partido amistoso en El Campín",
+    "locationId": "c1",
+    "city": "Bogotá",
+    "requiredLevel": "intermediate",
+    "currentPlayers": 6,
+    "maxPlayers": 10,
+    "date": "2025-04-10T18:00:00Z"
+  },
+  {
+    "id": "m2",
+    "title": "Partido rápido en Medellín Norte",
+    "locationId": "c2",
+    "city": "Medellín",
+    "requiredLevel": "beginner",
+    "currentPlayers": 4,
+    "maxPlayers": 8,
+    "date": "2025-04-11T20:00:00Z"
+  },
+  {
+    "id": "m3",
+    "title": "Encuentro advanced en La 14",
+    "locationId": "c3",
+    "city": "Cali",
+    "requiredLevel": "advanced",
+    "currentPlayers": 7,
+    "maxPlayers": 10,
+    "date": "2025-04-12T19:30:00Z"
+  },
+  {
+    "id": "m4",
+    "title": "Fútbol mixto en Panamericano",
+    "locationId": "c4",
+    "city": "Cali",
+    "requiredLevel": "intermediate",
+    "currentPlayers": 5,
+    "maxPlayers": 10,
+    "date": "2025-04-13T17:00:00Z"
+  },
+  {
+    "id": "m5",
+    "title": "Novatos bienvenidos en Envigado",
+    "locationId": "c5",
+    "city": "Envigado",
+    "requiredLevel": "beginner",
+    "currentPlayers": 3,
+    "maxPlayers": 6,
+    "date": "2025-04-14T16:00:00Z"
+  }
+]
