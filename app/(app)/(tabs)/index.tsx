@@ -42,6 +42,7 @@ const MatchesScreen = () => {
             backgroundColor: theme.colors.background,
             borderColor: theme.colors.primary,
             borderWidth: 1,
+            marginBottom: 20,
           },
         ]}
       />

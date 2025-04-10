@@ -60,5 +60,9 @@
     "date": "Fecha",
     "join": "Unirse",
     "joinSuccess": "¡Te has unido al partido: {{title}}!"
+  },
+  "complexes": {
+    "title": "Complejos deportivos",
+    "search": "Buscar por nombre o ciudad"
   }
 }

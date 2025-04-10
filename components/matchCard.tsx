@@ -35,14 +35,18 @@ const MatchCard = ({ match, onJoin }: Props) => {
       ]}>
       <Card.Title title={match.title} subtitle={match.city} />
       <Card.Content>
-        <Text>
-          {t("matches.requiredLevel")}: {match.requiredLevel}
+        <Text style={{ fontWeight: "bold" }}>
+          {t("matches.requiredLevel")}: <Text>{match.requiredLevel}</Text>
         </Text>
-        <Text>
-          {t("matches.players")}: {match.currentPlayers} / {match.maxPlayers}
+        <Text style={{ fontWeight: "bold" }}>
+          {t("matches.players")}:{" "}
+          <Text>
+            {match.currentPlayers} / {match.maxPlayers}
+          </Text>
         </Text>
-        <Text>
-          {t("matches.date")}: {new Date(match.date).toLocaleString()}
+        <Text style={{ fontWeight: "bold" }}>
+          {t("matches.date")}:{" "}
+          <Text>{new Date(match.date).toLocaleString()}</Text>
         </Text>
       </Card.Content>
       <Card.Actions>
